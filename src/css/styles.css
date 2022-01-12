@@ -1,0 +1,151 @@
+:root {
+  --color-primary: #49a6e9;
+  --color-secondary: #a5d5f8;
+  --color-text: #324d67;
+  --color-body: #f1f5f8;
+  --font-primary: "Open Sans", sans-serif;
+  --letter-spacing: 0.16rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --trasition: all 0.5s;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+html {
+  font-size: 62.5%;
+}
+body {
+  background: var(--color-body);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: 2.4rem;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Icons */
+.icon {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.icon--medium {
+  width: 25px;
+  height: 25px;
+}
+.icon--large {
+  width: 40px;
+  height: 40px;
+}
+.icon--primary {
+  color: var(--color-primary);
+}
+.icon--red {
+  color: red;
+}
+/* Collapsibles */
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.collapsible__toggler {
+  transition: var(--trasition);
+  position: absolute;
+  right: 0;
+  margin: 3rem 4rem;
+}
+.collapsible__body {
+  background: black;
+  width: 0;
+  height: 100vh;
+  opacity: 0;
+  overflow: hidden;
+  transition: var(--trasition);
+}
+.collapsible--expanded .collapsible__toggler {
+  transform: rotate(90deg);
+}
+.collapsible--expanded .collapsible__body {
+  /* Its crucial to use 'vh' instead of %. Because the content
+  area shuts abruptly if % is used. It also works if we used fixed
+  value like 'rem'*/
+  width: 40rem;
+  opacity: 1;
+  transition: var(--trasition);
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Navigation Bars */
+.sidebar {
+  background: #fff;
+  box-shadow: var(--light-shadow);
+  position: relative;
+}
+.sidebar__header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  flex-wrap: nowrap;
+}
+.sidebar__list {
+  width: 100%;
+  margin: 0 0 1.5rem 0;
+}
+.sidebar__item {
+  color: var(--color-text);
+  cursor: pointer;
+  border-radius: 4px;
+  letter-spacing: var(--letter-spacing);
+  padding: 1.6rem 2.4rem;
+  transition: var(--trasition);
+}
+.sidebar__item:hover {
+  background: var(--color-secondary);
+  padding: 1.6rem 2.4rem 1.6rem 3rem;
+}
+.sidebar__item:hover.sidebar__item > a {
+  color: var(--color-primary);
+}
+.sidebar__item a {
+  color: var(--color-text);
+}
+.sidebar img {
+  height: 4rem;
+}
+.icon-container {
+  position: absolute;
+  bottom: 5rem;
+  left: 14rem;
+  white-space: nowrap;
+}
+.icon-container .icon {
+  margin-right: 1rem;
+}
+.icon-container.collapsible__content .icon--primary:hover {
+  transition: var(--trasition);
+  color: var(--color-secondary);
+}

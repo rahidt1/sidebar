@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideBar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container collapsible">
+      <aside class="collapsible__body sidebar">
+        <div class="collapsible__header sidebar__header">
+          <a href="#"><img src="images/logo.svg" alt="" /></a>
+          <svg class="icon icon--large icon--red collapsible__close">
+            <use xlink:href="images/sprite.svg#times-circle-regular"></use>
+          </svg>
+        </div>
+        <ul class="list sidebar__list">
+          <li class="sidebar__item"><a href="#">Home</a></li>
+          <li class="sidebar__item"><a href="#">About</a></li>
+          <li class="sidebar__item"><a href="#">Projects</a></li>
+          <li class="sidebar__item"><a href="#">Contact</a></li>
+        </ul>
+        <span class="icon-container">
+          <a href="https://www.facebook.com/rahidt1" target="_blank">
+            <svg class="icon icon--medium icon--primary">
+              <use xlink:href="images/sprite.svg#facebook-brands"></use>
+            </svg>
+          </a>
+          <a href="https://github.com/rahidt1" target="_blank">
+            <svg class="icon icon--medium icon--primary">
+              <use xlink:href="images/sprite.svg#github-brands"></use>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rahidt/" target="_blank">
+            <svg class="icon icon--medium icon--primary">
+              <use xlink:href="images/sprite.svg#linkedin-brands"></use>
+            </svg>
+          </a>
+        </span>
+      </aside>
+      <svg class="icon icon--large icon--primary collapsible__toggler">
+        <use xlink:href="images/sprite.svg#bars-solid"></use>
+      </svg>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
